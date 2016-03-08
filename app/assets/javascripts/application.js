@@ -17,6 +17,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
 //= require bootstrap-datepicker
 //= require bootstrap-datetimepicker
 //= require jquery_nested_form
@@ -27,5 +28,7 @@
    	$('.datepicker').datepicker({
       format: 'dd-mm-yyyy'
    	});
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+        format: 'LT'
+       });
   });
