@@ -4,7 +4,6 @@
       <%= f.text_field :name, :class => "form-control",  placeholder: "Enter Group name"%>
     </div>
   </div>
-  <br>
   <%= f.fields_for :members do |ff| %>
     <div class="form-group"> 
       <div class="col-sm-5">
@@ -19,6 +18,6 @@
     </div>
   <% end %>
      
-  <%= f.link_to_add "Add Group Member", :members, class: "btn btn-warning pull-right"%>
+  <%= f.link_to_add "Add Member", :members, class: "btn btn-warning pull-right"%>
   <%= f.submit class: "btn btn-success"%> 
 <% end %> 

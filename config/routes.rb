@@ -12,7 +12,15 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get 'pages' => 'pages#index'
-    resources :users, only: [:index, :show, :destroy]  
+    resources :users, only: [:index, :show, :destroy] do
+      resources :groups do
+        member do
+          get 'remainders'
+        end
+        resources :remainders
+        resources :members
+      end
+    end  
   end
 
   root to: 'pages#index'

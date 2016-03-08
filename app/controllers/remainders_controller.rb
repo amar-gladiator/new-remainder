@@ -1,6 +1,7 @@
 class RemaindersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_remainder, only: [:show, :edit, :update, :destroy, :new, :create]
+  before_action :set_remainder, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:create, :update, :destroy, :new]
 
   # GET /remainders
   # GET /remainders.json
@@ -11,7 +12,6 @@ class RemaindersController < ApplicationController
   # GET /remainders/1
   # GET /remainders/1.json
   def show
-    @remainder =  @group.remainders
   end
 
   # GET /remainders/new
@@ -43,7 +43,7 @@ class RemaindersController < ApplicationController
   def update
     respond_to do |format|
       if @remainder.update(remainder_params)
-        format.html { redirect_to @remainder, notice: 'Remainder was successfully updated.' }
+        format.html { redirect_to group_remainders_path(@group), notice: 'Remainder was successfully updated.' }
         format.json { render :show, status: :ok, location: @remainder }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class RemaindersController < ApplicationController
   def destroy
     @remainder.destroy
     respond_to do |format|
-      format.html { redirect_to remainders_url, notice: 'Remainder was successfully destroyed.' }
+      format.html { redirect_to group_remainders_path(@group), notice: 'Remainder was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,8 +65,11 @@ class RemaindersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_remainder
-      @group = Group.find_by(params[:id])
-      # @remainder = Remainder.find(params[:id])
+      @remainder = Remainder.find(params[:id])
+    end
+
+    def set_group
+      @group = Group.find(params[:group_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

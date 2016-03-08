@@ -1,6 +1,6 @@
-<div class="container">
-  <h1>Listing Users</h1>
-  <table class="table table-stripped">
+<div>  
+  <h1 class="title">Listing Users</h1>
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Email</th>
@@ -8,7 +8,7 @@
         <th>Last name</th>
         <th>Mobile no</th>
         <th>Address</th>
-        <th colspan="2"></th>
+        <th colspan="2">Action</th>
       </tr>
     </thead>
 
@@ -20,8 +20,8 @@
           <td><%= user.last_name %></td>
           <td><%= user.mobile_no %></td>
           <td><%= user.address %></td>
-          <td><%= link_to 'Show', admin_user_path(user) %></td>
-          <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to show_icon, admin_user_path(user) %></td>
+          <td><%= link_to delete_icon, admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

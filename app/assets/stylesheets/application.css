@@ -20,19 +20,12 @@
  *= require bootstrap-datetimepicker
  *= require font-awesome
  */
- .menu{
-   margin: 0px;
-   background-color: #fff;
- }
- body{
- 	background: #efefef;
- }
- .edit-icon{
- 	padding: 5px 30px 5px 30px;
- }
- .container{
-   padding: 15px;background: #fff;
- }
- .pad-5{
-  padding: 5px;
-}
+.menu{ margin: 0px; }
+.pad-5{ padding: 5px; }
+.title{ font-weight: bold; text-align: center; color: #2c7578; 
+        padding: 15px; border: 1px solid #ddd; margin: 0px; text-transform: capitalize;}
+.wrapper{ border: 1px solid #ddd; padding: 15px; }
+.icon-pad{ padding: 5px 15px 5px 15px;}
+.danger-bg { background: #E3685F; }
+.info-bg { background: #679AA5; }
+

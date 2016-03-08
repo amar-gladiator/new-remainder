@@ -32,7 +32,7 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @remainder.group %>
+  <%= @remainder.group.name %>
 </p>
 
 <p>
@@ -40,5 +40,5 @@
   <%= @remainder.status %>
 </p>
 
-<%= link_to 'Edit', edit_remainder_path(@remainder) %> |
-<%= link_to 'Back', remainders_path %>
+<%= link_to 'Edit', edit_group_remainder_path(@remainder.group, @remainder) %> |
+<%= link_to 'Back', remainders_group_path(@remainder.group) %>

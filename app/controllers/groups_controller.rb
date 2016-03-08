@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all.limit(1)
+    @groups = Group.all
   end
 
   # GET /groups/1

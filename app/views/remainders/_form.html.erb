@@ -1,36 +1,38 @@
-<%= form_for @remainder, url: group_remainders_path do |f| %>
+<%= form_for(@remainder, url: group_remainders_path, html: { class: "form-horizontal"},  method: :post ) do |f| %>
   <div class="form-group"> 
-    <div class="col-sm-12 pad-5">
+    <div class="col-sm-12">
       <%= f.text_field :name, :class => "form-control",  placeholder: "Enter Remainder name"%>
     </div>
   </div>
 
   <div class="form-group"> 
-    <div class="col-sm-6 pad-5">
+    <div class="col-sm-6">
       <%= f.text_field :start_date, :class => "form-control datepicker",  placeholder: "Select Start Date"%>
     </div>
-    <div class="col-sm-6 pad-5">
+    <div class="col-sm-6">
      <%= f.text_field :end_date, :class => "form-control datepicker",  placeholder: "Select End Date"%>
     </div>
   </div>
 
   <div class="form-group"> 
-    <div class="col-sm-6 pad-5">
+    <div class="col-sm-6">
       <%= f.text_field :remainder_time, :class => "form-control datetimepicker",  placeholder: "Select Remainder Time"%>
     </div>
-    <div class="col-sm-6 pad-5">
+    <div class="col-sm-6">
      <%= f.text_field :schedule_interval, :class => "form-control",  placeholder: "Enter schedule interval"%>
     </div>
   </div>
 
   <div class="form-group"> 
-    <div class="col-sm-12 pad-5">
+    <div class="col-sm-12">
       <%= f.text_area :message, :class => "form-control",  placeholder: "Enter Message"%>
     </div>
   </div>
   
-  <div class="pull-right pad-5">
-    <%= f.submit class: "btn btn-success"%>
+  <div class="form-group"> 
+    <div class="text-center">
+      <%= f.submit class: "btn btn-success"%>
+    </div>
   </div>
 <% end %>
 

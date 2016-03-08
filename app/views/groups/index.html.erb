@@ -1,5 +1,6 @@
-<div class="container">
-  <table id="groups" class="table table-stripped">
+<div class="">
+  <h1 class = "title">Listing Groups</h1>
+  <table id="groups" class="table table-bordered wrapper">
     <thead>
       <tr>
         <th>Name</th>
@@ -8,7 +9,6 @@
         <th>Action</th>
       </tr>
     </thead>
-
     <tbody>
       <% @groups.each do |group| %>
         <tr>
@@ -21,9 +21,7 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-  <div class="pull-right">
+  <div class="text-center">
   <%= link_to "Create New Group", new_group_path, class: "btn btn-success" %>
   </div>
 </div>
