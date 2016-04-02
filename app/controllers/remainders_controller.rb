@@ -26,6 +26,7 @@ class RemaindersController < ApplicationController
   # POST /remainders
   # POST /remainders.json
   def create
+    binding.pry
     @remainder = @group.remainders.new(remainder_params)
     respond_to do |format|
       if @remainder.save

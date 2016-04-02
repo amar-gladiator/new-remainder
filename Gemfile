@@ -29,6 +29,7 @@ gem 'bootstrap3-datetimepicker-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-ui-rails'
 gem 'will_paginate'
+gem "pry"
 #client side validation
 gem 'simple_form'
 gem 'client_side_validations'
